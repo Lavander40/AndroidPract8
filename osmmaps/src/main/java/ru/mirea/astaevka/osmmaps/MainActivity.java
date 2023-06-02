@@ -101,7 +101,6 @@ public class MainActivity extends AppCompatActivity {
         marker.setPosition(new GeoPoint(aLatitude, aLongitude));
         marker.setOnMarkerClickListener(new Marker.OnMarkerClickListener() {
             public boolean onMarkerClick(Marker marker, MapView mapView) {
-                binding.textView.setText(text);
                 binding.imageView.setImageResource(drawable);
                 return true;
             }

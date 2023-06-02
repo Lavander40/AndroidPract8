@@ -70,11 +70,8 @@ public class MainActivity extends AppCompatActivity implements DrivingSession.Dr
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        int positionPermissionStatus = ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION);
-        int positionPermissionStatus2 = ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION);
-
-        if (positionPermissionStatus == PackageManager.PERMISSION_GRANTED
-                && positionPermissionStatus2 == PackageManager.PERMISSION_GRANTED) {
+        if (ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED
+                && ContextCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             isWork = true;
         } else {
             // Выполняется запрос к пользователь на получение необходимых разрешений
